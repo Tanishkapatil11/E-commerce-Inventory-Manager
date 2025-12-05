@@ -1,0 +1,25 @@
+server:
+  port: 5434
+
+spring:
+  application:
+    name: product-catalog-service
+
+  # --- CRITICAL: PostgreSQL Database Configuration ---
+  datasource:
+    # Use the colon (:) for key-value pairs in YAML
+    url: jdbc:postgresql://localhost:5432/productdb
+    username: postgres
+    password: Tanu@1104
+    driverClassName: org.postgresql.Driver
+
+  # --- JPA/Hibernate Configuration ---
+  jpa:
+    # ddl-auto and show-sql are direct children of jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
